@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:pos/pages/home_page.dart';
+import 'package:pos/pages/settings.dart';
+
 class BottomTabBar extends StatefulWidget {
   BottomTabBar({Key? key}) : super(key: key);
 
@@ -8,15 +12,13 @@ class BottomTabBar extends StatefulWidget {
 class _BottomTabBarState extends State<BottomTabBar> {
   int _index = 0;
   final screens = [
-    HomePage(),
-    SearchPage(),
-    ProfilePage(),
+    HomeBage(),
+    SettingPage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: screens[_index],
-
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: _index,
             onTap: (value) {
@@ -24,21 +26,16 @@ class _BottomTabBarState extends State<BottomTabBar> {
                 _index = value;
               });
             },
-            
             backgroundColor: Color.fromARGB(255, 227, 227, 227),
             items: [
               BottomNavigationBarItem(
-                icon: Icon(Boxicons.bx_home_circle),
+                icon: Icon(Icons.home),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Boxicons.bx_search),
+                icon: Icon(Icons.settings),
                 label: 'Search',
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Boxicons.bxs_user),
-                label: 'Profile',
-              )
             ]));
   }
 }

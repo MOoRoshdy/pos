@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos/components/%E2%80%8EBottomTabBar.dart';
 import 'package:pos/components/my_button.dart';
 import 'package:pos/components/my_textfield.dart';
 import 'package:pos/components/square_tile.dart';
@@ -82,7 +83,7 @@ class LoginPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (BuildContext) {
-                  return HomeBage();
+                  return BottomTabBar();
                 }));
               },
             ),
